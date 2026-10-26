@@ -138,6 +138,24 @@ body{background:radial-gradient(ellipse at 8% 10%,#f1e8d8 0,transparent 35%),rad
 @media(max-width:380px){.home-tile{min-height:118px;padding:14px;border-radius:21px}.home-tile .ico{width:43px;height:43px}.product-art{width:56px;height:56px;flex-basis:56px;border-radius:17px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
+
+/* V24 — médaillons pastel illustrés et interactifs */
+.home-title{margin:8px 0 18px;font-size:27px;color:#3f5146}
+.home-grid{gap:18px 12px;align-items:center;padding:4px 0 8px}
+.home-tile{position:relative;width:min(100%,166px);aspect-ratio:1/1;min-height:0;justify-self:center;align-items:center;justify-content:center;gap:10px;padding:17px 10px 15px;border-radius:50%;border:1px solid #ffffffed;background:var(--tile-scene,var(--tile-soft));box-shadow:0 8px 18px #6e806d15,inset 0 0 0 5px #ffffff55;color:#46574b;text-align:center;isolation:isolate;animation:medallionFloat 5.5s ease-in-out infinite;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.home-tile:nth-child(2){animation-delay:-1.1s}.home-tile:nth-child(3){animation-delay:-2.2s}.home-tile:nth-child(4){animation-delay:-.7s}.home-tile:nth-child(5){animation-delay:-1.8s}.home-tile:nth-child(6){animation-delay:-2.8s}
+.home-tile:before{inset:7px;border:1px solid #ffffffa8;border-radius:50%;opacity:1;background:radial-gradient(circle at 28% 20%,#ffffffc9 0 3px,transparent 4px),radial-gradient(circle at 78% 74%,#ffffffa0 0 2px,transparent 3px),radial-gradient(ellipse at 50% 0%,#ffffff66,transparent 62%);z-index:-1}
+.home-tile:after{right:19px;bottom:19px;font-size:25px;opacity:.45;filter:none}
+.home-tile .ico{display:grid;place-items:center;width:60px;height:60px;border-radius:50%;background:#ffffffa8;border:1px solid #ffffffd9;box-shadow:0 5px 12px #687c6412;font-size:32px;line-height:1;transition:transform .25s ease}
+.home-tile>span:last-child{font-size:14px;font-weight:850;letter-spacing:-.02em;position:relative;z-index:1}
+.home-tile.active{border-color:var(--tile-accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--tile-accent) 24%,transparent),0 12px 24px #66785b20,inset 0 0 0 5px #ffffff66;transform:scale(1.035)}
+.home-tile.active .ico{transform:translateY(-2px) scale(1.06);background:#ffffffd9}
+@keyframes medallionFloat{0%,100%{translate:0 0}50%{translate:0 -3px}}
+@media(hover:hover){.home-tile:hover{transform:translateY(-3px) scale(1.025);box-shadow:0 13px 26px #6e806d22,inset 0 0 0 5px #ffffff66}.home-tile:hover .ico{transform:rotate(-4deg) scale(1.06)}}
+@media(max-width:380px){.home-grid{gap:14px 8px}.home-tile{width:min(100%,145px);padding:13px 8px}.home-tile .ico{width:52px;height:52px;font-size:28px}.home-tile>span:last-child{font-size:13px}}
+@media(min-width:600px){.home-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.home-tile{width:min(100%,174px)}}
+@media(prefers-reduced-motion:reduce){.home-tile{animation:none!important}}
+
 </style></head><body><div class="app">
 <header class="top"><div class="brand"><div class="brand-mark" aria-hidden="true">🛒</div><div class="brand-copy"><div class="brand-name">Mon Cadd’<span>IE</span></div><div class="brand-tagline">Le caddie intelligent et économe</div><h1 id="projectHeading">Mon projet</h1></div></div><button class="iconbtn" id="settingsBtn" aria-label="Réglages">⚙</button></header>
 <section id="homeView" class="view active"><h2 class="home-title">Mon projet</h2><div class="home-grid" id="homeGrid"></div><div class="sectionhead"><h2 id="categoryProjectsTitle">Mobilier</h2></div><div class="project-list" id="projectList"></div><button class="project-add" id="newProjectBtn" style="margin-top:10px">＋ Nouveau projet</button></section>
